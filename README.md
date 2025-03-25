@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website built with Angular and Material You design principles, showcasing my skills and experience as an AI/ML Developer, Data Scientist, and Software Engineer.
 
-![Portfolio website banner](src/assets/img/banner.jpg?raw=true "Material You portfolio banner")
-
 ## Features
 
 - Material You design with dynamic theming
