@@ -1,12 +1,12 @@
 <article class="skill-list">
   <header class="skill-list__header">
     <div class="skill-list__header-container">
-      <h1 class="skill-list__header-text">I am primarily a </h1>
-      <h1 class="skill-list__header-text skill-list__header-text--highlighted">DevOps engineer</h1>
+      <h1 class="skill-list__header-text">I am a</h1>
+      <h1 class="skill-list__header-text skill-list__header-text--highlighted">Developer</h1>
     </div>
-    <h2 class="skill-list__subheading">Who has helped in the development of 8 websites so far. Here are the technologies I am familiar with.</h2>
+    <h2 class="skill-list__subheading">With experience in building intelligent systems and extracting insights from data. Here are the technologies I am familiar with.</h2>
   </header>
-  <section class="skill-list__area">
+  <section class="skill-list__area" *ngIf="certifications.length > 0">
     <h3 class="skill-list__area-header">
       <span class="skill-list__area-header-icon material-symbols-rounded">
         verified
@@ -25,12 +25,12 @@
   <section class="skill-list__area">
     <h3 class="skill-list__area-header">
       <span class="skill-list__area-header-icon material-symbols-rounded">
-        all_inclusive
+        psychology
       </span>
-      DevOps
+      Machine Learning & AI
     </h3>
     <div class="skill-list__stack">
-      @for (stackItem of devOpsStack; track stackItem) {
+      @for (stackItem of mlAiStack; track stackItem) {
         <ng-container
           [ngTemplateOutlet]="stackItemElement"
           [ngTemplateOutletContext]="{stackItem:stackItem}"
@@ -41,28 +41,12 @@
   <section class="skill-list__area">
     <h3 class="skill-list__area-header">
       <span class="skill-list__area-header-icon material-symbols-rounded">
-        language
+        analytics
       </span>
-      Front-end Web
+      Data Science & Analytics
     </h3>
     <div class="skill-list__stack">
-      @for (stackItem of feWebStack; track stackItem) {
-        <ng-container
-          [ngTemplateOutlet]="stackItemElement"
-          [ngTemplateOutletContext]="{stackItem:stackItem}"
-        ></ng-container>
-      }
-    </div>
-  </section>
-  <section class="skill-list__area">
-    <h3 class="skill-list__area-header">
-      <span class="skill-list__area-header-icon material-symbols-rounded">
-        dns
-      </span>
-      Back-end Web
-    </h3>
-    <div class="skill-list__stack">
-      @for (stackItem of beWebStack; track stackItem) {
+      @for (stackItem of dataScienceStack; track stackItem) {
         <ng-container
           [ngTemplateOutlet]="stackItemElement"
           [ngTemplateOutletContext]="{stackItem:stackItem}"
@@ -75,7 +59,39 @@
       <span class="skill-list__area-header-icon material-symbols-rounded">
         code
       </span>
-      General Development
+      Programming Languages
+    </h3>
+    <div class="skill-list__stack">
+      @for (stackItem of programmingStack; track stackItem) {
+        <ng-container
+          [ngTemplateOutlet]="stackItemElement"
+          [ngTemplateOutletContext]="{stackItem:stackItem}"
+        ></ng-container>
+      }
+    </div>
+  </section>
+  <section class="skill-list__area">
+    <h3 class="skill-list__area-header">
+      <span class="skill-list__area-header-icon material-symbols-rounded">
+        developer_mode
+      </span>
+      Software Development
+    </h3>
+    <div class="skill-list__stack">
+      @for (stackItem of softwareDevelopmentStack; track stackItem) {
+        <ng-container
+          [ngTemplateOutlet]="stackItemElement"
+          [ngTemplateOutletContext]="{stackItem:stackItem}"
+        ></ng-container>
+      }
+    </div>
+  </section>
+  <section class="skill-list__area">
+    <h3 class="skill-list__area-header">
+      <span class="skill-list__area-header-icon material-symbols-rounded">
+        category
+      </span>
+      Additional Technologies
     </h3>
     <div class="skill-list__stack">
       @for (stackItem of generalStack; track stackItem) {

@@ -12,28 +12,23 @@ export class ProfileInfoComponent implements OnInit {
 	contactLinks = [
 		{
 			icon: "mail",
-			link: "mailto:contact@dartegnian.com",
-			text: "contact@dartegnian.com"
+			link: "mailto:aayushgala19@gmail.com",
+			text: "Email"
 		},
 		{
 			icon: "code",
-			link: "https://github.com/dartegnian",
-			text: "github.com/dartegnian"
-		},
-		{
-			icon: "edit",
-			link: "https://blog.dartegnian.com/",
-			text: "https://blog.dartegnian.com"
+			link: "https://github.com/AayushGala-git",
+			text: "GitHub"
 		},
 		{
 			icon: "work",
-			link: "https://www.linkedin.com/in/dartegnian/",
-			text: "linkedin.com/in/dartegnian"
+			link: "https://www.linkedin.com/in/aayush-gala-71b71416a/",
+			text: "LinkedIn"
 		},
 	];
 
 	constructor() {
-		this.description = "Hi, I'm Dartegnian Velarde! I’m an agile and determined DevOps engineer with a passion for curating innovative and responsive web applications, with highly-functional knowledge on various aspects of computer programming, web development, and the DevOps process. Communicating well with others, troubleshooting, and fluency in English are some of my other skills. Adaptability and conscientiousness are my predominant traits.";
+		this.description = "Hi, I'm Aayush Gala! I'm an experienced professional with a multidisciplinary background in AI/ML development, data analysis, data science, and software development. I have a proven track record in building, deploying, and enhancing applications, and I excel at solving complex challenges with innovative technical solutions. My technical expertise combined with strong problem-solving abilities allows me to deliver impactful results across various domains.";
 	}
 
 	ngOnInit(): void {

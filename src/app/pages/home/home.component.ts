@@ -11,17 +11,29 @@ import { SkillListComponent } from '@components/skill-list/skill-list.component'
 import { LifeAtAGlanceComponent } from '@components/life-at-a-glance/life-at-a-glance.component';
 import { SkillInfoComponent } from '@components/skill-info/skill-info.component';
 import { SkillPictureComponent } from '@components/skill-picture/skill-picture.component';
-import { OtherSitesComponent } from '@components/other-sites/other-sites.component';
 import { ProfileInfoComponent } from '@components/profile-info/profile-info.component';
 import { ProfileCardComponent } from '@components/profile-card/profile-card.component';
 import { HeroBannerComponent } from '@components/hero-banner/hero-banner.component';
 import { ThemeSwitcherComponent } from '@components/theme-switcher/theme-switcher.component';
+import { ProjectsComponent } from '@components/projects/projects.component';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [ThemeSwitcherComponent, HeroBannerComponent, ProfileCardComponent, ProfileInfoComponent, OtherSitesComponent, SkillPictureComponent, SkillInfoComponent, LifeAtAGlanceComponent, SkillListComponent, EmailCtaComponent, UpdatingSnackbarComponent, FooterComponent, RouterOutlet]
+    imports: [
+      ThemeSwitcherComponent,
+      HeroBannerComponent,
+      ProfileCardComponent,
+      ProfileInfoComponent,
+      ProjectsComponent,
+      LifeAtAGlanceComponent,
+      SkillListComponent,
+      EmailCtaComponent,
+      UpdatingSnackbarComponent,
+      FooterComponent,
+      RouterOutlet
+    ]
 })
 export class HomeComponent {
 	private idb = inject(IdbService);

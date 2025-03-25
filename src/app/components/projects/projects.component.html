@@ -1,0 +1,65 @@
+<article class="projects">
+  <header class="projects__header">
+    <h1 class="projects__title">
+      <span class="material-symbols-rounded">rocket_launch</span>
+      Projects
+    </h1>
+    <p class="projects__description">Explore my portfolio of projects across different domains</p>
+  </header>
+
+  <section class="projects__categories">
+    <div class="projects__category" [class.projects__category--active]="selectedCategory === 'ai-ml'" (click)="selectCategory('ai-ml')">
+      <span class="material-symbols-rounded">psychology</span>
+      AI/ML Projects
+    </div>
+    <div class="projects__category" [class.projects__category--active]="selectedCategory === 'data'" (click)="selectCategory('data')">
+      <span class="material-symbols-rounded">data_usage</span>
+      Data Science and Analytics Projects
+    </div>
+    <div class="projects__category" [class.projects__category--active]="selectedCategory === 'software'" (click)="selectCategory('software')">
+      <span class="material-symbols-rounded">code</span>
+      Software Development
+    </div>
+  </section>
+
+  <section class="projects__list">
+    @for (project of filteredProjects; track project.id) {
+      <article class="project-card">
+        <header class="project-card__header">
+          <h2 class="project-card__title">{{ project.title }}</h2>
+        </header>
+        <p class="project-card__description">{{ project.description }}</p>
+        
+        @if (project.achievements && project.achievements.length > 0) {
+          <div class="project-card__achievements">
+            <h3 class="project-card__section-title">Key Achievements</h3>
+            <ul class="project-card__achievement-list">
+              @for (achievement of project.achievements; track achievement) {
+                <li class="project-card__achievement-item">
+                  <span class="material-symbols-rounded">check_circle</span>
+                  {{ achievement }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+
+        <div class="project-card__tech">
+          <h3 class="project-card__section-title">Technologies Used</h3>
+          @for (tech of project.technologies; track tech) {
+            <span class="project-card__tech-item">{{ tech }}</span>
+          }
+        </div>
+
+        <footer class="project-card__footer">
+          @if (project.githubLink) {
+            <a [href]="project.githubLink" target="_blank" class="project-card__link">
+              <span class="material-symbols-rounded">code</span>
+              GitHub
+            </a>
+          }
+        </footer>
+      </article>
+    }
+  </section>
+</article>

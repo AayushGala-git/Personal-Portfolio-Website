@@ -1,37 +1,121 @@
+# Aayush Gala's Portfolio
+
+A modern, responsive portfolio website built with Angular and Material You design principles, showcasing my skills and experience as an AI/ML Developer, Data Scientist, and Software Engineer.
+
 ![Portfolio website banner](src/assets/img/banner.jpg?raw=true "Material You portfolio banner")
 
-![Portfolio website screenshot standard theme](src/assets/img/screenshot1.png?raw=true "Material You portfolio site screenshot 1")
+## Features
 
-![Portfolio website screenshot green theme](src/assets/img/screenshot2.png?raw=true "Material You portfolio site screenshot 2")
+- Material You design with dynamic theming
+- Responsive layout for all device sizes
+- Interactive components showcasing:
+  - Skills and expertise
+  - Projects portfolio
+  - Professional experience
+  - Education and research
+- Light/dark mode toggle
+- Modern Angular implementation (currently on Angular 19)
 
-![Portfolio website screenshot dark purple theme](src/assets/img/screenshot3.png?raw=true "Material You portfolio site screenshot 3")
+## Technologies Used
 
-# Dartegnian's Portfolio
+- **Frontend**: Angular 19, TypeScript, HTML5, SCSS
+- **Design**: Material You design system
+- **Deployment**: Angular CLI, npm
 
-An interactive portfolio website with [Material You color](https://m3.material.io/) schemes.
+## Getting Started
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1, and kept up-to-date as much as possible. Currently on Angular 19!
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Development server
+### Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Make sure you have the following installed on your system:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (v14.0.0 or higher)
+- [npm](https://www.npmjs.com/) (v6.0.0 or higher)
+- [Angular CLI](https://angular.io/cli) (v14.0.0 or higher)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/portfolio.git
+   cd portfolio
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Open your browser and navigate to:
+   ```
+   http://localhost:4200/
+   ```
 
-## Running end-to-end tests
+The application will automatically reload if you change any of the source files.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Build for Production
 
-## Further help
+To build the project for production deployment:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng build --configuration production
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Deployment Options
+
+### Firebase Hosting
+
+1. Install Firebase CLI:
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. Login to Firebase:
+   ```bash
+   firebase login
+   ```
+
+3. Initialize Firebase:
+   ```bash
+   firebase init
+   ```
+
+4. Deploy to Firebase:
+   ```bash
+   firebase deploy
+   ```
+
+### GitHub Pages
+
+1. Install angular-cli-ghpages:
+   ```bash
+   npm install -g angular-cli-ghpages
+   ```
+
+2. Build the project with your GitHub Pages base URL:
+   ```bash
+   ng build --configuration production --base-href="https://username.github.io/repository-name/"
+   ```
+
+3. Deploy to GitHub Pages:
+   ```bash
+   npx angular-cli-ghpages --dir=dist/portfolio
+   ```
+
+## Acknowledgments
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1, and is currently maintained with Angular 19.
+
+Material You design principles are based on Google's [Material Design 3](https://m3.material.io/).
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -13,8 +13,8 @@ import { ResponsiveImageComponent } from '../responsive-image/responsive-image.c
 export class ProfileCardComponent implements OnInit, OnDestroy {
 	private accent = inject(AccentService);
 
-	name = "Dartegnian L. Velarde";
-	tagline = "Software engineer, web developer, Linux enthusiast, DevOps engineer";
+	name = "Aayush Gala";
+	tagline = "AI/ML Developer, Data Scientist, Software Engineer";
 
 	images: Array<string>;
 	coverImage: string;

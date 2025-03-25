@@ -1,194 +1,174 @@
 import { Component, OnInit } from '@angular/core';
-import { NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet, NgIf, CommonModule } from '@angular/common';
 // import { locate } from '@iconify/json';
 
 @Component({
     selector: 'skill-list',
     templateUrl: './skill-list.component.html',
     styleUrls: ['./skill-list.component.scss'],
-    imports: [NgTemplateOutlet],
+    imports: [NgTemplateOutlet, NgIf, CommonModule],
 	host: {ngSkipHydration: 'true'},
 })
 export class SkillListComponent implements OnInit {
 	certifications: Array<any>;
-	devOpsStack: Array<any>;
-	feWebStack: Array<any>;
-	beWebStack: Array<any>;
+	mlAiStack: Array<any>;
+	dataScienceStack: Array<any>;
+	programmingStack: Array<any>;
+	softwareDevelopmentStack: Array<any>;
 	generalStack: Array<any>;
 
 	constructor() {
-		this.certifications = [
+		this.certifications = [];
+		
+		this.mlAiStack = [
 			{
-				icon: "cib:amazon-aws",
-				text: "AWS Certified Cloud Practitioner"
-			},
-		];
-		this.devOpsStack = [
-			{
-				icon: "codicon:terminal-linux",
-				text: "Linux"
+				icon: "cib:tensorflow",
+				text: "TensorFlow"
 			},
 			{
-				icon: "cib:amazon-aws",
-				text: "Amazon AWS"
+				icon: "simple-icons:pytorch",
+				text: "PyTorch"
 			},
 			{
-				icon: "fa-brands:jenkins",
-				text: "Jenkins"
+				icon: "simple-icons:keras",
+				text: "Keras"
 			},
 			{
-				icon: "simple-icons:sonarqube",
-				text: "Sonarqube"
+				icon: "mdi:language-python",
+				text: "scikit-learn"
 			},
 			{
-				icon: "fa-brands:docker",
-				text: "Docker"
+				icon: "mdi:language-python",
+				text: "NLTK"
 			},
 			{
-				icon: "codicon:terminal-bash",
-				text: "Shell scripting"
-			},
-			{
-				icon: "cib:cloudflare",
-				text: "Cloudflare"
-			},
-			{
-				icon: "fa-brands:linode",
-				text: "Linode"
-			},
-			{
-				icon: "bi:gitlab",
-				text: "GitLab"
-			},
-			{
-				icon: "simple-icons:vercel",
-				text: "Vercel"
-			},
-			{
-				icon: "simple-icons:heroku",
-				text: "Heroku"
-			},
+				icon: "simple-icons:spacy",
+				text: "spaCy"
+			}
 		];
 
-		this.feWebStack = [
+		this.dataScienceStack = [
 			{
-				icon: "fa-brands:angular",
-				text: "Angular"
+				icon: "simple-icons:pandas",
+				text: "Pandas"
 			},
 			{
-				icon: "cib:typescript",
-				text: "TypeScript"
+				icon: "simple-icons:numpy",
+				text: "NumPy"
 			},
 			{
-				icon: "simple-icons:jasmine",
-				text: "Jasmine"
+				icon: "simple-icons:microsoftexcel",
+				text: "Excel"
 			},
 			{
-				icon: "file-icons:karma",
-				text: "Karma"
+				icon: "simple-icons:tableau",
+				text: "Tableau"
 			},
 			{
-				icon: "fa-brands:react",
-				text: "React"
+				icon: "simple-icons:powerbi",
+				text: "Power BI"
 			},
 			{
-				icon: "devicon-plain:nextjs",
-				text: "Next.js"
+				icon: "devicon:matplotlib",
+				text: "Matplotlib"
 			},
 			{
-				icon: "file-icons:jsx-alt",
-				text: "JSX"
+				icon: "mdi:language-python",
+				text: "Seaborn"
+			}
+		];
+
+		this.programmingStack = [
+			{
+				icon: "cib:python",
+				text: "Python"
 			},
 			{
-				icon: "fa-brands:vuejs",
-				text: "Vue.js"
+				icon: "cib:r",
+				text: "R"
 			},
 			{
-				icon: "cib:nuxt-js",
-				text: "Nuxt"
+				icon: "cib:java",
+				text: "Java"
 			},
 			{
-				icon: "cib:sass-alt",
-				text: "Sass"
+				icon: "cib:c",
+				text: "C"
 			},
 			{
-				icon: "file-icons:bem",
-				text: "B.E.M."
+				icon: "cib:cplusplus",
+				text: "C++"
 			},
 			{
-				icon: "fa-brands:html5",
-				text: "HTML5"
-			},
-			{
-				icon: "fa-brands:css3",
-				text: "CSS3"
+				icon: "devicon:mysql",
+				text: "SQL"
 			},
 			{
 				icon: "cib:javascript",
 				text: "JavaScript"
-			},
+			}
 		];
 
-		this.beWebStack = [
+		this.softwareDevelopmentStack = [
 			{
-				icon: "simple-icons:express",
-				text: "ExpressJS"
+				icon: "mdi:language-java",
+				text: "JavaFX"
 			},
 			{
-				icon: "simple-icons:mongodb",
-				text: "MongoDB"
+				icon: "simple-icons:spring",
+				text: "Spring Boot"
+			},
+			{
+				icon: "simple-icons:hibernate",
+				text: "Hibernate"
+			},
+			{
+				icon: "mdi:api",
+				text: "REST APIs"
+			},
+			{
+				icon: "simple-icons:flask",
+				text: "Flask"
+			},
+			{
+				icon: "cib:docker",
+				text: "Docker"
+			},
+			{
+				icon: "cib:amazon-aws",
+				text: "AWS"
+			},
+			{
+				icon: "cib:git",
+				text: "Git"
 			}
 		];
 
 		this.generalStack = [
 			{
-				icon: "cib:flutter",
-				text: "Flutter"
+				icon: "simple-icons:apachespark",
+				text: "Spark"
 			},
 			{
-				icon: "simple-icons:dart",
-				text: "Dart"
+				icon: "simple-icons:apachehadoop",
+				text: "Hadoop"
 			},
 			{
-				icon: "cib:git",
-				text: "Git"
+				icon: "cib:mysql",
+				text: "MySQL"
 			},
 			{
-				icon: "cib:github",
-				text: "GitHub"
-			},
-			{
-				icon: "cib:bitbucket",
-				text: "BitBucket"
-			},
-			{
-				icon: "cib:vim",
-				text: "Vim"
+				icon: "cib:postgresql",
+				text: "PostgreSQL"
 			},
 			{
 				icon: "akar-icons:vscode-fill",
 				text: "VSCode"
 			},
 			{
-				icon: "cib:arch-linux",
-				text: "Arch Linux, btw"
-			},
-			{
-				icon: "cib:jira",
-				text: "Jira"
-			},
-			{
-				icon: "cib:confluence",
-				text: "Confluence"
-			},
-			{
-				icon: "simple-icons:clickup",
-				text: "ClickUp"
-			},
-			{
-				icon: "tabler:seo",
-				text: "S.E.O."
-			},
+				icon: "mdi:chart-bell-curve",
+				text: "Advanced Statistical Methods"
+			}
 		];
 	}
 

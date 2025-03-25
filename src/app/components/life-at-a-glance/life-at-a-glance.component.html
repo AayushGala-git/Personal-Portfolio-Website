@@ -1,62 +1,90 @@
 <article class="life-at-a-glance">
+  <!-- Header -->
   <header class="life-at-a-glance__header">
-    <section class="life-at-a-glance__header-info">
-      <div class="life-at-a-glance__header-text">
-        <h1 class="life-at-a-glance__heading" >My life:</h1>
-        <h1 class="life-at-a-glance__heading" >{{ feature }}</h1>
-      </div>
-      @for (description of features[featureIndex]['description']; track description) {
-        <p
-          class="life-at-a-glance__header-description"
-          >
-          {{ description }}
-        </p>
+    <h1 class="life-at-a-glance__title">
+      <span class="material-symbols-rounded">timeline</span>
+      Life at a Glance
+    </h1>
+    <p class="life-at-a-glance__description">Explore my journey through education, work experience, and research</p>
+  </header>
+
+  <div class="life-at-a-glance__content">
+    <nav class="life-at-a-glance__tabs">
+      @for (feature of features; track feature.title) {
+        <button
+          class="life-at-a-glance__tab-btn"
+          [class.active]="selectedFeature === feature"
+          (click)="selectFeature(feature)">
+          <span class="material-symbols-rounded">{{ feature.icon }}</span>
+          {{ feature.title }}
+        </button>
+      }
+    </nav>
+    
+    <section class="life-at-a-glance__card">
+      <header class="life-at-a-glance__card-header">
+        <span class="life-at-a-glance__card-icon material-symbols-rounded">{{ selectedFeature.icon }}</span>
+        <div class="life-at-a-glance__card-header-text">
+          <h2 class="life-at-a-glance__card-title">{{ selectedFeature.title }}</h2>
+          <p class="life-at-a-glance__card-short">{{ selectedFeature.shortDescription }}</p>
+        </div>
+      </header>
+      
+      <!-- Education Timeline -->
+      @if (selectedFeature.title === 'Education') {
+        <div class="life-at-a-glance__timeline">
+          @for (desc of selectedFeature.description; track $index) {
+            <div class="life-at-a-glance__timeline-item">
+              <div class="life-at-a-glance__timeline-marker"></div>
+              <div class="life-at-a-glance__timeline-content">
+                @if ($index === 0) {
+                  <h3 class="life-at-a-glance__timeline-title">{{ desc }}</h3>
+                } @else {
+                  <p class="life-at-a-glance__timeline-description">{{ desc }}</p>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      }
+
+      <!-- Work Experience Achievements -->
+      @if (selectedFeature.title === 'Work Experience') {
+        <div class="life-at-a-glance__achievements">
+          <div class="life-at-a-glance__job-title">
+            <h3 class="life-at-a-glance__achievement-heading">{{ selectedFeature.description[0] }}</h3>
+          </div>
+          <div class="life-at-a-glance__achievement-list">
+            @for (desc of selectedFeature.description; track $index) {
+              @if ($index > 0) {
+                <div class="life-at-a-glance__achievement-item">
+                  <span class="life-at-a-glance__achievement-icon material-symbols-rounded">verified</span>
+                  <p class="life-at-a-glance__achievement-text">{{ desc }}</p>
+                </div>
+              }
+            }
+          </div>
+        </div>
+      }
+
+      <!-- Research Section -->
+      @if (selectedFeature.title === 'Research & Dissertation') {
+        <div class="life-at-a-glance__research">
+          <div class="life-at-a-glance__research-title">
+            <h3 class="life-at-a-glance__research-heading">{{ selectedFeature.description[0] }}</h3>
+          </div>
+          <div class="life-at-a-glance__research-methods">
+            @for (desc of selectedFeature.description; track $index) {
+              @if ($index > 0) {
+                <div class="life-at-a-glance__research-item">
+                  <span class="life-at-a-glance__research-icon material-symbols-rounded">science</span>
+                  <p class="life-at-a-glance__research-text">{{ desc }}</p>
+                </div>
+              }
+            }
+          </div>
+        </div>
       }
     </section>
-    <section class="life-at-a-glance__feature">
-      <div class="life-at-a-glance__feature-actions">
-        <a [href]="features[featureIndex]['link']" target="_blank" class="life-at-a-glance__action" role="button" tabindex="0"><span class="material-symbols-rounded life-at-a-glance__action-icon">link</span></a>
-        <div class="life-at-a-glance__action life-at-a-glance__action--empty"></div>
-        <div (click)="shuffleFeature()" class="life-at-a-glance__action" role="button" tabindex="0"><span class="material-symbols-rounded life-at-a-glance__action-icon">shuffle</span></div>
-        <div class="life-at-a-glance__action life-at-a-glance__action--empty"></div>
-        <div class="life-at-a-glance__action life-at-a-glance__action--center"><span class="material-symbols-rounded life-at-a-glance__action-icon">{{ features[featureIndex]["icon"] }}</span></div>
-        <div class="life-at-a-glance__action life-at-a-glance__action--empty"></div>
-        <div (click)="skipFeature('previous')" class="life-at-a-glance__action" [class.life-at-a-glance__action--disabled]="featureIndex === 1 || featureIndex === 0" role="button" tabindex="0"><span class="material-symbols-rounded life-at-a-glance__action-icon">skip_previous</span></div>
-        <div class="life-at-a-glance__action life-at-a-glance__action--empty"></div>
-        <div (click)="skipFeature('next')" class="life-at-a-glance__action" [class.life-at-a-glance__action--disabled]="featureIndex === features.length - 1" role="button" tabindex="0"><span class="material-symbols-rounded life-at-a-glance__action-icon">skip_next</span></div>
-      </div>
-    </section>
-  </header>
-  <hr/>
-  <section class="life-at-a-glance__cards">
-    <div class="life-at-a-glance__cards-wrapper">
-      <ng-container [ngTemplateOutlet]="glanceCard"></ng-container>
-    </div>
-  </section>
+  </div>
 </article>
-
-<ng-template #glanceCard>
-  @for (feature of features; track feature; let i = $index) {
-    @if (i !== 0) {
-      <article
-        (click)="setFeature(i)"
-        class="life-at-a-glance__card"
-        [class.life-at-a-glance__card--selected]="featureIndex === i"
-        role="button" tabindex="0"
-        >
-        <header class="life-at-a-glance__card-header">
-          @if (feature.isNew) {
-            <span class="life-at-a-glance__card-title-new">New</span>
-          }
-          <div class="life-at-a-glance__card-title-thumb">{{ feature.title.charAt(0) }}</div>
-          <h2 class="life-at-a-glance__heading">{{ feature.title }}</h2>
-        </header>
-        <section>
-          <div>
-            <p>{{ feature.shortDescription }}</p>
-          </div>
-        </section>
-      </article>
-    }
-  }
-</ng-template>

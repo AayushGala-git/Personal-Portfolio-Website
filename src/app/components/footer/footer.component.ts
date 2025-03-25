@@ -10,24 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 	footerLinks = [
 		{
-			icon: "photo_camera",
-			link: "https://www.instagram.com/dartegnian/",
-			text: "Instagram"
-		},
-		{
-			icon: "public",
-			link: "https://dartegnian.com/",
-			text: "https://dartegnian.com"
+			icon: "mail",
+			link: "mailto:aayushgala19@gmail.com",
+			text: "Email"
 		},
 		{
 			icon: "code",
-			link: "https://github.com/dartegnian",
-			text: "github.com/dartegnian"
+			link: "https://github.com/AayushGala-git",
+			text: "github.com/AayushGala-git"
 		},
 		{
 			icon: "work",
-			link: "https://www.linkedin.com/in/dartegnian/",
-			text: "linkedin.com/in/dartegnian"
+			link: "https://www.linkedin.com/in/aayush-gala-71b71416a/",
+			text: "linkedin.com/in/aayush-gala-71b71416a"
 		},
 	];
 

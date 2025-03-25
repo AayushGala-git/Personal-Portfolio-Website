@@ -4,6 +4,7 @@
 	display: flex;
 	gap: 2rem;
 	padding: 0rem 2rem;
+	margin-bottom: 3rem;
 
 	@include media-breakpoint-down(md) {
 		flex-direction: column-reverse;
@@ -11,34 +12,37 @@
 }
 
 .profile-body {
-	margin: 2rem;
+	margin: 3rem 2rem;
 
 	&--themed {
-		margin: 2rem 0rem;
+		margin: 3rem 0rem;
 		@include material-container--primary;
-		padding: 0rem;
+		padding: 2rem;
 		border-radius: $container-border-radius;
 	}
 	
 	&--themed-secondary {
 		@include material-container--secondary;
 	}
+
+	&--themed-tertiary {
+		@include material-container--tertiary;
+	}
 }
 
 .at-a-glance {
-	margin: 0rem 2rem;
+	margin: 3rem 2rem;
 }
 
 .skill-section {
 	display: flex;
     overflow: hidden;
 	flex-direction: column;
-	padding: $full-container-padding;
 
 	&__container {
 		display: flex;
 		overflow: hidden;
-		padding: $full-container-padding;
+		padding: 2rem;
 		overflow: visible;
 
 		@include media-breakpoint-down(lg) {

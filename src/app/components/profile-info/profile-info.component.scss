@@ -67,15 +67,23 @@
 
 	&__description {
 		margin: 0rem;
+		text-align: justify;
 	}
 
 	&__link {
 		@include material-button--filled-secondary;
+		text-decoration: none;
+		transition: transform 0.2s ease-in-out;
+
+		&:hover {
+			transform: translateY(-2px);
+		}
 	}
 
 	&__link-text {
 		flex-grow: 1;
-		text-align: center;
+		text-align: left;
+		font-weight: 500;
 	}
 
 	&__contact-icon {

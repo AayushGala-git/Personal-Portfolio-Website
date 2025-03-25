@@ -23,27 +23,11 @@ export class HeroBannerComponent implements OnInit, OnDestroy {
 	activeIndex: number;
 	customImage: string | ArrayBuffer | null = null;
 
-	siteTitle = "Dartegnian's Portfolio";
-	siteDescription = "An interactive portfolio website with Material You implementation. Colors dynamically adjust to a selected theme. Choose one below to get started.";
+	siteTitle = "Aayush Gala";
+	siteDescription = "An AI/ML Developer and Data Scientist with expertise in designing and implementing intelligent systems. Passionate about leveraging cutting-edge technologies to solve complex problems and extract meaningful insights from data.";
 
 	isBrowser: boolean = false;
-	externalIcons = [
-		{
-			icon: "mdi:instagram",
-			text: "Instagram",
-			link: "https://www.instagram.com/dartegnian/"
-		},
-		{
-			icon: "mdi:linkedin",
-			text: "LinkedIn",
-			link: "https://www.linkedin.com/in/dartegnian/"
-		},
-		{
-			icon: "mdi:spotify",
-			text: "Spotify",
-			link: "https://open.spotify.com/user/dartegnian"
-		},
-	];
+	externalIcons = [];
 
 	/** Inserted by Angular inject() migration for backwards compatibility */
 	constructor(...args: unknown[]);

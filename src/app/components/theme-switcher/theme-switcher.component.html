@@ -1,6 +1,6 @@
-<button (click)="toggleThemeMode()" class="theme-switcher">
+<button (click)="toggleThemeMode()" class="theme-switcher" aria-label="Switch between light and dark mode">
 	<span class="material-symbols-rounded theme-switcher__toggle-icon">
 		{{ themeIcon }}
 	</span>
-	Toggle theme
+	Switch to {{ themeMode === 'light' ? 'Dark' : 'Light' }} Mode
 </button>

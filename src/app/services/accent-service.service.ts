@@ -15,7 +15,6 @@ export class AccentService {
 	private nowPlayingService = inject(NowPlayingService);
 
 	images = [
-		"custom",
 		"primary",
 		"secondary",
 		"tertiary"
@@ -23,7 +22,7 @@ export class AccentService {
 	themeMode: "light" | "dark";
 	themeSubscription: Subject<"light" | "dark"> = new Subject();
 	accentSubscription: Subject<number> = new Subject();
-	activeIndex = 1;
+	activeIndex = 0;
 
 	themeRawColorData: Theme | undefined;
 
@@ -189,23 +188,37 @@ export class AccentService {
 	) {
 		let theme = null;
 		const parentElement = document.getElementById(parentOfImg);
-		// const colorThief = new ColorThief();
 
 		if (parentElement) {
 			const imgElement = parentElement.querySelector("img");
 			let color = "";
 
 			if (imgElement) {
-				// color = this.rgbToHex(await this.getColorFromImage(imgElement));
-				// theme = themeFromSourceColor(argbFromHex(color));
 				theme = await themeFromImage(imgElement as HTMLImageElement);
 			} else {
 				console.log("No <img> element found within the parent element.");
-				theme = themeFromSourceColor(argbFromHex("#b0b2bd"));
+				// Fallback colors for each theme if image is not found
+				if (parentOfImg.includes("primary")) {
+					theme = themeFromSourceColor(argbFromHex("#1976D2")); // Dartegnian Blue
+				} else if (parentOfImg.includes("secondary")) {
+					theme = themeFromSourceColor(argbFromHex("#388E3C")); // Vibrant Green
+				} else if (parentOfImg.includes("tertiary")) {
+					theme = themeFromSourceColor(argbFromHex("#6A1B9A")); // Filling Station Purple
+				} else {
+					theme = themeFromSourceColor(argbFromHex("#b0b2bd")); // Default fallback
+				}
 			}
 		} else {
 			console.error("Parent element with ID '" + parentOfImg + "' not found.");
-			theme = themeFromSourceColor(argbFromHex("#b0b2bd"));
+			if (parentOfImg.includes("primary")) {
+				theme = themeFromSourceColor(argbFromHex("#1976D2")); // Dartegnian Blue
+			} else if (parentOfImg.includes("secondary")) {
+				theme = themeFromSourceColor(argbFromHex("#388E3C")); // Vibrant Green
+			} else if (parentOfImg.includes("tertiary")) {
+				theme = themeFromSourceColor(argbFromHex("#6A1B9A")); // Filling Station Purple
+			} else {
+				theme = themeFromSourceColor(argbFromHex("#b0b2bd")); // Default fallback
+			}
 		}
 
 		if (theme) {

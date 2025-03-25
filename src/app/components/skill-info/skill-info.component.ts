@@ -11,11 +11,11 @@ export class SkillInfoComponent implements OnInit {
 	private platformId = inject<Object>(PLATFORM_ID);
 
 	webAttributes = [
-		"focused",
-		"inspired",
-		"driven",
-		"oriented",
-		"impassioned"
+		"data-driven",
+		"innovative",
+		"analytical",
+		"solution-oriented",
+		"detail-focused"
 	];
 	webAttributeIndex = 0;
 	webAttributeCharacter = 0;
